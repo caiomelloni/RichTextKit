@@ -20,6 +20,8 @@ import Combine
  context with focus in a multi-windowed app.
  */
 public class RichTextContext: ObservableObject {
+    
+    public var onLinkClick: ((String)->Void)?
 
     /// Create a new rich text context instance.
     public init() {}

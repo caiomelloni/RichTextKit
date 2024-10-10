@@ -117,7 +117,12 @@ open class RichTextCoordinator: NSObject {
 #if iOS || os(tvOS) || os(visionOS)
 import UIKit
 
-extension RichTextCoordinator: UITextViewDelegate {}
+extension RichTextCoordinator: UITextViewDelegate {
+    public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        context.onLinkClick?(URL.absoluteString)
+        return false
+    }
+}
 
 #elseif macOS
 import AppKit
