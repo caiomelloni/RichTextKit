@@ -21,13 +21,15 @@ import Combine
  */
 public class RichTextContext: ObservableObject {
     
-    public var onLinkClick: ((String)->Void)?
 
     /// Create a new rich text context instance.
     public init() {}
 
     // MARK: - Not yet observable properties
 
+    public var onLinkClick: ((String)->Void)?
+    public var onPasteText: ((String)->Bool)?
+    
     /**
      The currently attributed string, if any.
 
