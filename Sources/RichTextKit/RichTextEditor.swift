@@ -116,6 +116,7 @@ public struct RichTextEditor: ViewRepresentable {
         textView.configuration = config
         textView.theme = style
         viewConfiguration(textView)
+        textView.backgroundColor = style.backgroundColor
         return textView
     }
 
